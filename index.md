@@ -2,7 +2,10 @@
 layout: default
 ---
 
-# The Initial Problem
+# Proposed Method 1, GPEX
+dddd
+
+# The Initial Prediction Problem
 OncotypeDX test is a genomic assay for specific cohorts of breast cancer patients. 
 The output of the assay is a number between 0 and 100 for each patient, and in this article we refer to it as
 recurrence score.
@@ -20,11 +23,18 @@ The dataset contained the following information for each patient:
 - Estrogen/progesterone receptor (ER/PR) intensity and percentages, obtained by pathologist assessment (four ordinal integers for each patient). 
 
 # Proposed Method 1
-We evaluated the state-of-the-art method CLAM [6] as well as the well-known cell profiler [7] features 
-in predicting recurrence score directly from H&E-stained breast cancer images    
+We evaluated the state-of-the-art method CLAM [6] as well as the well-known cell profiler [7] features in predicting recurrence score directly from H&E-stained breast cancer images.    
 This was done mainly by N. Guruprasad and with participation of A. Akbarnejad.
 These methods could achieve prediction performances of up to 82 in terms of AUC.
 
+
+The state-of-the-art method CLAM [6] encodes a whole-slide image by feeding each patch to a **fixed** resnet backbone which is pretrained on imagenet.
+One may ask: is the low prediction performance of CLAM related to using a fixed backbone and not training the backbone itself?
+
+
+To answer this question we proposed a pipeline based on deep Fisher-vector encoding which is entirely trained in an end-to-end way.
+The method was published in the ISBI conference in 2021 [4]. 
+The performance of our pipeline was 
 
 
 # References
