@@ -57,9 +57,15 @@ Because recurrence-score is a combination of measurements for different genes.
 In this regards, our findings are as follows:
 1. Weakly-supervised learning (i.e. learning with slide-level labels) is not effective in predicting Ki67, ER, PR, and Her2 status from slide images.
 This fact is also observed in the study of Laleh et al [10].
-2. Now that weakly-supervised is not effective, for this prediction task no large datasets containing strong (i.e. patch-level or pixel-level)labels are available [11].   
-3. 
+2. Now that weak supervision is not effective, for this prediction task no large datasets containing strong (i.e. patch-level or pixel-level) labels are available [11].   
+3. For this prediction task, the performance of previous methods could not surpass 80-85 in terms of AUC, probably due to the unavailablity of datasets [11]. 
 
+Given the lack of a large dataset for this prediction task (finding 2 mentioned above), we collected a large dataset that provides strong labels (i.e. patch-level labels).
+Our dataset contains roughly 180K images (90K pairs) each of which are 3K by 3K.
+Collecting the dataset took roughly 8 months, and we put a lot of effort to obtain reliable labels.  
+Using our large dataset and with proper labeling protocl, we were finally able to train methods whose prediction performance is around 90 in terms of AUC (point 3 mentioned above).
+We published the dataset and the analysis in a paper [1] which is currently under review.
+We made the dataset publicly available online [12].  
 
 # References
 [1] A. Akbarnejad and N. Ray and P. J Barnes and G. Bigras,
@@ -97,6 +103,8 @@ whole-slide images", Nature biomedical engineering, 5(6):555–570, 2021.
 
 [11] D. Cifci, S. Foersch, and J. N. Kather, "Artificial intelligence to identify genetic alterations in conventional histopathology", The Journal of Pathology, 257(4):430–444, 2022.
 
+
+[12] https://ihc4bc.github.io/
 
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
