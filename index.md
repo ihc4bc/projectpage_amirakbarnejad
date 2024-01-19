@@ -11,10 +11,19 @@ OncotypeDX recurrence score stratifies patients as follows:
 - Recurrence-score between 18 and 30: medium risk of distant recurrence in 10 years.
 - Recurrence-score between 30 and 100: high risk of distant recurrence in 10 years.
 
+The initial goal was to adopt machine learning to predict recurrence-score only from H&E-stained 
+histopathology images, thereby bypassing the need for performing genomic assays. 
+A dataset of roughly 600 breast cancer patients was collected.
+The dataset contained the following information for each patient:
+- One H&E-stained whole-slide image
+- The result of OncotypeDX test for the patient (a number between 0 and 100)
+- Estrogen/progesterone receptor (ER/PR) intensity and percentages, obtained by pathologist assessment (four ordinal integers for each patient). 
 
-
-Predicting OncotypeDX Recurrence Score for Breast Cancer from H&E Whole-slide Images
-ddsdfsdfsdfsdf
+# Proposed Method 1
+We evaluated the state-of-the-art method CLAM [6] as well as the well-known cell profiler [7] features 
+in predicting recurrence score directly from H&E-stained breast cancer images    
+This was done mainly by N. Guruprasad and with participation of A. Akbarnejad.
+These methods could achieve prediction performances of up to 82 in terms of AUC.
 
 
 
@@ -36,6 +45,11 @@ ddsdfsdfsdfsdf
 (BIBM), 2023.
 
 
+[6] M. Y, Lu, D. F. Williamson, et al, "Data-efficient and weakly supervised computational pathology on
+whole-slide images", Nature biomedical engineering, 5(6):555–570, 2021.
+
+
+[7] A. E. Carpenter, T. R. Jones, et al, "CellProfiler: image analysis software for identifying and quantifying cell phenotypes", Genome Biol 7, R100 (2006). 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).
