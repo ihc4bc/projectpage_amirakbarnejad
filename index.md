@@ -2,7 +2,18 @@
 layout: default
 ---
 
-# Predicting OncotypeDX Recurrence Score for Breast Cancer from H&E Whole-slide Images
+# The Initial Problem
+OncotypeDX test is a genomic assay for specific cohorts of breast cancer patients. 
+The output of the assay is a number between 0 and 100 for each patient, and in this article we refer to it as
+recurrence score.
+OncotypeDX recurrence score stratifies patients as follows:
+- Recurrence-score between 0 and 18: low risk of distant recurrence in 10 years.
+- Recurrence-score between 18 and 30: medium risk of distant recurrence in 10 years.
+- Recurrence-score between 30 and 100: high risk of distant recurrence in 10 years.
+
+
+
+Predicting OncotypeDX Recurrence Score for Breast Cancer from H&E Whole-slide Images
 ddsdfsdfsdfsdf
 
 
