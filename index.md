@@ -2,6 +2,25 @@
 layout: default
 ---
 
+# Header 1
+
+
+
+# References
+[1] A. Akbarnejad and N. Ray and P. J Barnes and G. Bigras,
+ “Predicting Ki67, ER, PR, and HER2 Statuses from H&E-stained Breast Cancer Images,” arxiv preprint: https://arxiv.org/abs/2308.01982.
+
+
+[2] A. Akbarnejad and G. Bigras and N. Ray, “GPEX, A Framework For Interpreting Artificial Neural Networks,” Conference on Neural Information Processing Systems (NeurIPS) 2023.
+
+
+[3] Y. Yang and A. Akbarnejad and N. Ray and G. Bigras, “Double adversarial domain adaptation for whole-slide-imageclassification,” Medical Imaging with Deep Learning (MIDL), 2021.
+
+
+[4] A. Akbarnejad and N. Ray and G. Bigras, “Deep Fisher Vector Coding For Whole Slide Image Classification,” in International Symposium of Biomedical Imaging (ISBI), 2021.
+
+
+
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).
