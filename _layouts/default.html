@@ -14,14 +14,14 @@
     {% include head-custom.html %}
   </head>
   <body>
-    <div class="wrapper" width=1200px>
+    <div class="wrapper">
       <header>
         <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1>
         <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
 
         <ul>
           {% if site.show_downloads %}
-            <li class="download"><a class="buttons" href="https://amirakbarnejad.github.io" target="_blank">website: A. Akbarnejad</a></li>
+            <li class="download"><a class="buttons" href="https://amirakbarnejad.github.io" target="_blank" style="text-decoration: none; font-size: 0.5em;">website: A. Akbarnejad</a></li>
             <li class="download"><a class="buttons" href="http://webdocs.cs.ualberta.ca/~nray1/" target="_blank">website: Prof. Ray</a></li>
             <li class="download"><a class="buttons" href="https://ca.linkedin.com/in/gilbert-bigras-512133101" target="_blank">website: Dr. Bigras</a></li>
           {% endif %}
