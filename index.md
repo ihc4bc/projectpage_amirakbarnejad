@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Proposed Method 1, GPEX
+# Sec 1. Proposed Method 1, GPEX
 Gaussian process (GP) is a white-box model which has the potential to become globally faithful to a neural network, 
 thereby unboxing the blackbox of deep learning [8]. 
 Existing theoretical works put strict assumptions on a neural network to make it equivalent to a Gaussian process.
@@ -11,7 +11,7 @@ We proposed a method that - given a neural network - adopts knowledge distillati
 Since GP is a white-box model, the obtained GPs can provide insights about the underlying decision mechanisms of the given neural network. 
 Our method called GPEX showed promissing results and was published in NeurIPS 2023 conference [2].
 
-# The Initial Prediction Problem
+# Sec 2. The Initial Prediction Problem
 OncotypeDX test is a genomic assay for specific cohorts of breast cancer patients. 
 The output of the assay is a number between 0 and 100 for each patient, and in this article we refer to it as
 recurrence score.
@@ -28,7 +28,7 @@ The dataset contained the following information for each patient:
 - The result of OncotypeDX test for the patient (a number between 0 and 100)
 - Estrogen/progesterone receptor (ER/PR) intensity and percentages, obtained by pathologist assessment (four ordinal integers for each patient). 
 
-# Proposed Method 2
+# Sec 3. Proposed Method 2
 We evaluated the state-of-the-art method CLAM [6] as well as the well-known cell profiler [7] features in predicting recurrence score directly from H&E-stained breast cancer images.    
 This was done mainly by N. Guruprasad and with participation of A. Akbarnejad.
 These methods could achieve prediction performances of up to 82 in terms of AUC.
@@ -48,8 +48,17 @@ The proposed dataloader streams patches from the whole-slide images to GPU(s) in
 So far (checked on Jan 19th, 2024) PyDmed's repository on github has 18 stars.   
 
 
-# Dividing the Initial Prediction Problem to Subproblems
-dddd
+# Sec 4. The Proposed IHC4BC Dataset
+Oncotype DX test obtains a number for many different genes/proteins (like Ki67, ER, PR, and Her2).
+Afterwards, these numbers from different genes are normalized and averaged by different weights to produce the final recurrence score.
+One may think: given a whole-slide image, predicting the measurement for each gene could be a simpler problem than predicting the recurrence score itself.
+Because recurrence-score is a combination of measurements for different genes.
+
+In this regards, our findings are as follows:
+1. Weakly-supervised learning (i.e. learning with slide-level labels) is not effective in predicting Ki67, ER, PR, and Her2 status from slide images.
+This fact is also observed in the study of Laleh et al [10].
+2. Now that weakly-supervised is not effective, for this prediction task no large datasets containing strong (i.e. patch-level or pixel-level)labels are available [11].   
+3. 
 
 
 # References
@@ -81,6 +90,12 @@ whole-slide images", Nature biomedical engineering, 5(6):555–570, 2021.
 
 
 [9] https://github.com/amirakbarnejad/PyDmed/
+
+
+[10] N. G. Laleh, H. S. Muti, et al, "Benchmarking weakly-supervised deep learning pipelines for whole slide classification in computational pathology", Med Image Anal. 2022 Jul;79:102474.
+
+
+[11] D. Cifci, S. Foersch, and J. N. Kather, "Artificial intelligence to identify genetic alterations in conventional histopathology", The Journal of Pathology, 257(4):430–444, 2022.
 
 
 
