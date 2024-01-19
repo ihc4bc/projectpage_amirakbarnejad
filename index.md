@@ -3,7 +3,13 @@ layout: default
 ---
 
 # Proposed Method 1, GPEX
-dddd
+Gaussian process (GP) is a white-box model which has the potential to become globally faithful to a neural network, 
+thereby unboxing the blackbox of deep learning [8]. 
+Existing theoretical works put strict assumptions on a neural network to make it equivalent to a Gaussian process.
+Accommodating those theoretical assumptions is hard in recent deep architectures, and those theoretical conditions need refinement as new deep architectures emerge.
+We proposed a method that - given a neural network - adopts knowledge distillation to finds a GP which is equivalent to the neural network.
+Since GP is a white-box model, the obtained GPs can provide insights about the underlying decision mechanisms of the given neural network. 
+Our methods called GPEX was published in NeurIPS 2023 conference [2].
 
 # The Initial Prediction Problem
 OncotypeDX test is a genomic assay for specific cohorts of breast cancer patients. 
@@ -22,7 +28,7 @@ The dataset contained the following information for each patient:
 - The result of OncotypeDX test for the patient (a number between 0 and 100)
 - Estrogen/progesterone receptor (ER/PR) intensity and percentages, obtained by pathologist assessment (four ordinal integers for each patient). 
 
-# Proposed Method 1
+# Proposed Method 2
 We evaluated the state-of-the-art method CLAM [6] as well as the well-known cell profiler [7] features in predicting recurrence score directly from H&E-stained breast cancer images.    
 This was done mainly by N. Guruprasad and with participation of A. Akbarnejad.
 These methods could achieve prediction performances of up to 82 in terms of AUC.
@@ -60,6 +66,11 @@ whole-slide images", Nature biomedical engineering, 5(6):555–570, 2021.
 
 
 [7] A. E. Carpenter, T. R. Jones, et al, "CellProfiler: image analysis software for identifying and quantifying cell phenotypes", Genome Biol 7, R100 (2006). 
+
+
+[8] https://blog.research.google/2020/03/fast-and-easy-infinitely-wide-networks.html
+
+
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).
