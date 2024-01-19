@@ -9,7 +9,7 @@ Existing theoretical works put strict assumptions on a neural network to make it
 Accommodating those theoretical assumptions is hard in recent deep architectures, and those theoretical conditions need refinement as new deep architectures emerge.
 We proposed a method that - given a neural network - adopts knowledge distillation to finds a GP which is equivalent to the neural network.
 Since GP is a white-box model, the obtained GPs can provide insights about the underlying decision mechanisms of the given neural network. 
-Our methods called GPEX was published in NeurIPS 2023 conference [2].
+Our method called GPEX showed promissing results and was published in NeurIPS 2023 conference [2].
 
 # The Initial Prediction Problem
 OncotypeDX test is a genomic assay for specific cohorts of breast cancer patients. 
@@ -40,7 +40,16 @@ One may ask: is the low prediction performance of CLAM related to using a fixed 
 
 To answer this question we proposed a pipeline based on deep Fisher-vector encoding which is entirely trained in an end-to-end way.
 The method was published in the ISBI conference in 2021 [4]. 
-The performance of our pipeline was 
+All in all the proposed pipeline [4] was slightly better than CLAM [6] in predicting recurrence-score, but still the prediction performance did not surpass 82 in terms of AUC.
+
+When training the end-to-end pipeline, the conventional PyTorch dataloader is prohibitively slow.
+Therefore, to address this issue we developed a python tool called PyDmed and made it publicly available [9].
+The proposed dataloader streams patches from the whole-slide images to GPU(s) in an efficient way, so the GPU(s) do not remain idle while new pathces are being extracted from WSIs.
+So far (checked on Jan 19th, 2024) PyDmed's repository on github has 18 stars.   
+
+
+# Dividing the Initial Prediction Problem to Subproblems
+dddd
 
 
 # References
@@ -69,6 +78,10 @@ whole-slide images", Nature biomedical engineering, 5(6):555–570, 2021.
 
 
 [8] https://blog.research.google/2020/03/fast-and-easy-infinitely-wide-networks.html
+
+
+[9] https://github.com/amirakbarnejad/PyDmed/
+
 
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
