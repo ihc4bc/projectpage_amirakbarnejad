@@ -20,6 +20,9 @@ layout: default
 [4] A. Akbarnejad and N. Ray and G. Bigras, “Deep Fisher Vector Coding For Whole Slide Image Classification,” in International Symposium of Biomedical Imaging (ISBI), 2021.
 
 
+[5] N. Guruprasad, A. Akbarnejad, G. Bigras, P. J. Barnes, and N. Ray, "A Closer Look at Weak Supervision's Limitations in WSI Recurrence Score Prediction", IEEE International Conference on Bioinformatics and Biomedicine
+(BIBM), 2023.
+
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
