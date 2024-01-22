@@ -74,8 +74,9 @@ These manually-marked points were used to answer the following question: Can sta
 [TODO: the result of analysis]. 
 
 
-# Sec 6. The Proposed IHC4BC Dataset
-ddd
+# Sec 6. Applying GPEX to Her2 Predictors
+We applied our proposed GPEX to Her2 predictors which were trained on the pixel-level annotations.
+TODO: the result of the analysis.
 
 
 # References
