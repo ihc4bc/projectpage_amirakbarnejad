@@ -7,9 +7,9 @@ Gaussian process (GP) is a white-box model which has the potential to become glo
 thereby unboxing the blackbox of deep learning [8]. 
 Existing theoretical works put strict assumptions on a neural network to make it equivalent to a Gaussian process.
 Accommodating those theoretical assumptions is hard in recent deep architectures, and those theoretical conditions need refinement as new deep architectures emerge.
-We proposed a method that - given a neural network - adopts knowledge distillation to finds a GP which is equivalent to the neural network.
+We proposed a method that - given a neural network - adopts knowledge distillation to find a GP which is equivalent to the neural network.
 Since GP is a white-box model, the obtained GPs can provide insights about the underlying decision mechanisms of the given neural network. 
-Our method called GPEX showed promissing results and was published in NeurIPS 2023 conference [2], and is available as a python package [13] with online documentation [14].
+Our method called GPEX showed promising results and was published in NeurIPS 2023 conference [2], and is available as a python package [13] with online documentation [14].
 
 # Sec 2. The Initial Prediction Problem
 OncotypeDX test is a genomic assay for specific cohorts of breast cancer patients. 
@@ -44,7 +44,7 @@ All in all the proposed pipeline [4] was slightly better than CLAM [6] in predic
 
 When training the end-to-end pipeline, the conventional PyTorch dataloader is prohibitively slow.
 Therefore, to address this issue we developed a python tool called PyDmed and made it publicly available [9].
-The proposed dataloader streams patches from the whole-slide images to GPU(s) in an efficient way, so the GPU(s) do not remain idle while new pathces are being extracted from WSIs.
+The proposed dataloader streams patches from the whole-slide images to GPU(s) in an efficient way, so the GPU(s) do not remain idle while new patches are being extracted from WSIs.
 So far (checked on Jan 19th, 2024) PyDmed's repository on github has 18 stars.   
 
 
@@ -58,12 +58,12 @@ In this regards, our findings are as follows:
 1. Weakly-supervised learning (i.e. learning with slide-level labels) is not effective in predicting Ki67, ER, PR, and Her2 status from slide images.
 This fact is also observed in the study of Laleh et al [10].
 2. Now that weak supervision is not effective, for this prediction task no large datasets containing strong (i.e. patch-level or pixel-level) labels are available [11].   
-3. For this prediction task, the performance of previous methods could not surpass 80-85 in terms of AUC, probably due to the unavailablity of datasets [11]. 
+3. For this prediction task, the performance of previous methods could not surpass 80-85 in terms of AUC, probably due to the unavailability of datasets [11]. 
 
 Given the lack of a large dataset for this prediction task (finding 2 mentioned above), we collected a large dataset that provides strong labels (i.e. patch-level labels).
 Our dataset contains roughly 180K images (90K pairs) each of which are 3K by 3K.
 Collecting the dataset took roughly 8 months, and we put a lot of effort to obtain reliable labels.  
-Using our large dataset and with proper labeling protocl, we were finally able to train methods whose prediction performance is around 90 in terms of AUC (point 3 mentioned above).
+Using our large dataset and with proper labeling protocol, we were finally able to train methods whose prediction performance is around 90 in terms of AUC (point 3 mentioned above).
 We published the dataset and the analysis in a paper [1] which is currently under review.
 We made the dataset publicly available online [12].  
 
@@ -75,7 +75,8 @@ These manually-marked points were used to answer the following question: Can sta
 
 
 # Sec 6. Applying GPEX to Her2 Predictors
-We applied our proposed GPEX to Her2 predictors which were trained on the pixel-level annotations.
+We trained Her2 predictors using the pixel-level labels. Afterwards, we applied our proposed GPEX to the predictors to obtain GPs which are equivalent to the Her2 predictors.
+Since GP is a white-box model, the obtained GPs can provide insights about the Her2 predictors.
 TODO: the result of the analysis.
 
 
