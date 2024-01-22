@@ -9,7 +9,7 @@ Existing theoretical works put strict assumptions on a neural network to make it
 Accommodating those theoretical assumptions is hard in recent deep architectures, and those theoretical conditions need refinement as new deep architectures emerge.
 We proposed a method that - given a neural network - adopts knowledge distillation to finds a GP which is equivalent to the neural network.
 Since GP is a white-box model, the obtained GPs can provide insights about the underlying decision mechanisms of the given neural network. 
-Our method called GPEX showed promissing results and was published in NeurIPS 2023 conference [2].
+Our method called GPEX showed promissing results and was published in NeurIPS 2023 conference [2], and is available as a python package [13] with online documentation [14].
 
 # Sec 2. The Initial Prediction Problem
 OncotypeDX test is a genomic assay for specific cohorts of breast cancer patients. 
@@ -67,6 +67,17 @@ Using our large dataset and with proper labeling protocl, we were finally able t
 We published the dataset and the analysis in a paper [1] which is currently under review.
 We made the dataset publicly available online [12].  
 
+
+# Sec 5. Automatic Localization Methods versus Pixel-level Supervision
+Given the aforementioned limitation of methods in localizing relevant image regions, we manually marked near 900K points on Her2 positive tissue regions.
+These manually-marked points were used to answer the following question: Can state-of-the-art localization methods (with 3K by 3K patch-level labels) perform as good as strongly-supervised methods trained with pixel-level labels?
+[TODO: the result of analysis]. 
+
+
+# Sec 6. The Proposed IHC4BC Dataset
+ddd
+
+
 # References
 [1] A. Akbarnejad and N. Ray and P. J Barnes and G. Bigras,
  “Predicting Ki67, ER, PR, and HER2 Statuses from H&E-stained Breast Cancer Images,” arxiv preprint: https://arxiv.org/abs/2308.01982.
@@ -105,5 +116,9 @@ whole-slide images", Nature biomedical engineering, 5(6):555–570, 2021.
 
 
 [12] https://ihc4bc.github.io/
+
+[13] https://github.com/amirakbarnejad/gpex
+
+[14] https://gpex.readthedocs.io/en/latest/
 
 
