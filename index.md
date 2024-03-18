@@ -76,25 +76,28 @@ These manually-marked points were used to answer the following question: Can sta
 
 # Sec 6. Applying GPEX to Her2 Predictors
 We trained Her2 predictors using the pixel-level labels. Afterwards, we applied our proposed GPEX to the predictors to obtain GPs which are equivalent to the Her2 predictors.
-Since GP is a white-box model, the obtained GPs can provide insights about the Her2 predictors.
-TODO: the result of the analysis.
+Since GP is a white-box model, the obtained GPs were used to provide insights about the Her2 predictors.
+Besides inspecting biomarker predictors, an important goal is to identify tissue types which are missing in our in-house IHC4BC dataset and to add those images to the dataset. 
+This goal is fulfilled in the setting known as active learning where a pool of unlabeled instances are available, and an active learner picks up some instances in the pool and
+ asks for their labels. The active learner is supposed to pick up pool instances which are the most beneficial to a predictor. 
+In Bayesian active learning we showed that the GPs obtained by our proposed GPEX are a better choice than the commonly-used dropout and can improve state-of-the-art Bayesian active learners. 
 
 
 # References
-[1] A. Akbarnejad and N. Ray and P. J Barnes and G. Bigras,
+[1] **A. Akbarnejad** and N. Ray and P. J Barnes and G. Bigras,
  “Predicting Ki67, ER, PR, and HER2 Statuses from H&E-stained Breast Cancer Images,” arxiv preprint: https://arxiv.org/abs/2308.01982.
 
 
-[2] A. Akbarnejad and G. Bigras and N. Ray, “GPEX, A Framework For Interpreting Artificial Neural Networks,” Conference on Neural Information Processing Systems (NeurIPS) 2023.
+[2] **A. Akbarnejad** and G. Bigras and N. Ray, “GPEX, A Framework For Interpreting Artificial Neural Networks,” Conference on Neural Information Processing Systems (NeurIPS) 2023.
 
 
-[3] Y. Yang and A. Akbarnejad and N. Ray and G. Bigras, “Double adversarial domain adaptation for whole-slide-imageclassification,” Medical Imaging with Deep Learning (MIDL), 2021.
+[3] Y. Yang and **A. Akbarnejad** and N. Ray and G. Bigras, “Double adversarial domain adaptation for whole-slide-imageclassification,” Medical Imaging with Deep Learning (MIDL), 2021.
 
 
-[4] A. Akbarnejad and N. Ray and G. Bigras, “Deep Fisher Vector Coding For Whole Slide Image Classification,” in International Symposium of Biomedical Imaging (ISBI), 2021.
+[4] **A. Akbarnejad** and N. Ray and G. Bigras, “Deep Fisher Vector Coding For Whole Slide Image Classification,” in International Symposium of Biomedical Imaging (ISBI), 2021.
 
 
-[5] N. Guruprasad, A. Akbarnejad, G. Bigras, P. J. Barnes, and N. Ray, "A Closer Look at Weak Supervision's Limitations in WSI Recurrence Score Prediction", IEEE International Conference on Bioinformatics and Biomedicine
+[5] N. Guruprasad, **A. Akbarnejad**, G. Bigras, P. J. Barnes, and N. Ray, "A Closer Look at Weak Supervision's Limitations in WSI Recurrence Score Prediction", IEEE International Conference on Bioinformatics and Biomedicine
 (BIBM), 2023.
 
 
